@@ -50,3 +50,6 @@ C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Er
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\obj\Debug\net8.0\BuberDinner.Api.sourcelink.json
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\MediatR.dll
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Mapster.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Mapster.Core.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Mapster.DependencyInjection.dll
