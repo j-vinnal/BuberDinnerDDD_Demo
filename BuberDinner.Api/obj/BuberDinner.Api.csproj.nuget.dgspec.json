@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -102,6 +103,7 @@
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -136,6 +138,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
@@ -174,6 +184,7 @@
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Contracts\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -232,6 +243,7 @@
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -296,6 +308,7 @@
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -330,6 +343,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[8.0.0, )"

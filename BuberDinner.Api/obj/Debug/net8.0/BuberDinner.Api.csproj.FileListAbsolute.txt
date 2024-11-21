@@ -53,3 +53,9 @@ C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Me
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Mapster.dll
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Mapster.Core.dll
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Mapster.DependencyInjection.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\FluentValidation.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

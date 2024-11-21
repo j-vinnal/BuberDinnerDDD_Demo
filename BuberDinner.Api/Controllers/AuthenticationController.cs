@@ -3,11 +3,13 @@ using BuberDinner.Application.Authentication.Queries.Login;
 using BuberDinner.Contracts.Authentication;
 using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuberDinner.Api.Controllers;
 
 [Route("auth")]
+[AllowAnonymous]
 public class AuthenticationController : ApiController
 {
 
@@ -29,7 +31,7 @@ public class AuthenticationController : ApiController
 
         return authResult.Match(
             result => Ok(_mapper.Map<AuthenticationResponse>(result)),
-            Problem 
+            Problem
         );
     }
 

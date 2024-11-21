@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
