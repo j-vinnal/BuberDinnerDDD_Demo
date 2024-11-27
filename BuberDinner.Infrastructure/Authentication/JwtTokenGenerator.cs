@@ -3,9 +3,9 @@ using System.Security.Claims;
 using System.Text;
 using BuberDinner.Application.Common.Interfaces.Authentication;
 using BuberDinner.Application.Common.Interfaces.Services;
+using BuberDinner.Domain.User;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
-using BuberDinner.Domain.Entities;
 
 namespace BuberDinner.Infrastructure.Authentication;
 
