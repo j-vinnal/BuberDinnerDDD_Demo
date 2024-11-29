@@ -1,6 +1,5 @@
 namespace BuberDinner.Domain.Common.Models;
 
-
 // ValueObject is a base class for all value objects in the domain
 public abstract class ValueObject : IEquatable<ValueObject>
 {

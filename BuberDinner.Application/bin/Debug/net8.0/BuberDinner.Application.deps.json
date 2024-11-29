@@ -12,7 +12,8 @@
           "FluentValidation": "11.11.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "MediatR": "12.4.1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "StyleCop.Analyzers": "1.1.118"
         },
         "runtime": {
           "BuberDinner.Application.dll": {}
@@ -86,6 +87,7 @@
           }
         }
       },
+      "StyleCop.Analyzers/1.1.118": {},
       "BuberDinner.Domain/1.0.0": {
         "dependencies": {
           "ErrorOr": "2.0.1"
@@ -153,6 +155,13 @@
       "sha512": "sha512-3iE7UF7MQkCv1cxzCahz+Y/guQbTqieyxyaWKhrRO91itI9cOKO76OHeQDahqG4MmW5umr3CcCvGmK92lWNlbg==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.2",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+    },
+    "StyleCop.Analyzers/1.1.118": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
+      "path": "stylecop.analyzers/1.1.118",
+      "hashPath": "stylecop.analyzers.1.1.118.nupkg.sha512"
     },
     "BuberDinner.Domain/1.0.0": {
       "type": "project",

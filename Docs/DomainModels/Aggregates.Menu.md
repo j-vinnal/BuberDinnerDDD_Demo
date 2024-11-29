@@ -18,7 +18,7 @@ public class Menu
     "id": {"value": "00000000-0000-0000-0000-000000000000"},
     "name": "Yummy Menu",
     "description": "My menu with yummy food",
-    "averagerating": 4.5,
+    //"averagerating": 4.5,
     "sections": [
         {
             "id": {"value": "00000000-0000-0000-0000-000000000000"},

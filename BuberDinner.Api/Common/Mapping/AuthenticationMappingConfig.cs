@@ -1,5 +1,5 @@
 using BuberDinner.Application.Authentication.Common;
-using BuberDinner.Domain.User.ValueObjects;
+using BuberDinner.Domain.Users.ValueObjects;
 
 namespace BuberDinner.Api.Common.Mapping;
 
@@ -12,7 +12,6 @@ public class AuthenticationMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
-        
         config.NewConfig<RegisterRequest, RegisterCommand>();
         config.NewConfig<LoginRequest, LoginQuery>();
         config.NewConfig<AuthenticationResult, AuthenticationResponse>()

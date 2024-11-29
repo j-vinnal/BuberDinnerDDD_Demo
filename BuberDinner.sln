@@ -16,6 +16,19 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution_Items", "Solution_Items", "{4FA35FD8-B881-46F0-986E-01CEA6C3CAA3}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\Api.md = Docs\Api.md
+		Directory.Build.props = Directory.Build.props
+		Docs\Secret.md = Docs\Secret.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{31C8FCC0-D91B-4A75-BF4A-2A320F71B2A8}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DomainModels\Aggregates.Bill.md = Docs\DomainModels\Aggregates.Bill.md
+		Docs\DomainModels\Aggregates.Dinner.md = Docs\DomainModels\Aggregates.Dinner.md
+		Docs\DomainModels\Aggregates.Guest.md = Docs\DomainModels\Aggregates.Guest.md
+		Docs\DomainModels\Aggregates.Host.md = Docs\DomainModels\Aggregates.Host.md
+		Docs\DomainModels\Aggregates.Menu.md = Docs\DomainModels\Aggregates.Menu.md
+		Docs\DomainModels\Aggregates.MenuReview.md = Docs\DomainModels\Aggregates.MenuReview.md
+		Docs\DomainModels\Aggregates.User.md = Docs\DomainModels\Aggregates.User.md
 	EndProjectSection
 EndProject
 Global
@@ -47,5 +60,8 @@ Global
 		{1A48846A-F2FB-4CB6-814E-298320AE7DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A48846A-F2FB-4CB6-814E-298320AE7DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A48846A-F2FB-4CB6-814E-298320AE7DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31C8FCC0-D91B-4A75-BF4A-2A320F71B2A8} = {4FA35FD8-B881-46F0-986E-01CEA6C3CAA3}
 	EndGlobalSection
 EndGlobal

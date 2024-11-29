@@ -31,20 +31,18 @@ public class AuthenticationController : ApiController
 
         return authResult.Match(
             result => Ok(_mapper.Map<AuthenticationResponse>(result)),
-            Problem
-        );
+            Problem);
     }
 
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest request)
     {
         var query = _mapper.Map<LoginQuery>(request);
-        
+
         var authResult = await _mediator.Send(query);
 
         return authResult.Match(
             result => Ok(_mapper.Map<AuthenticationResponse>(result)),
-            Problem
-        );
+            Problem);
     }
 }
