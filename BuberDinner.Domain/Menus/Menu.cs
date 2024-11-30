@@ -14,26 +14,16 @@ public class Menu : AggregateRoot<MenuId>
     private readonly List<DinnerId> _dinnerIds = new();
     private readonly List<MenuReviewId> _menuReviewIds = new();
 
-    public string Name { get;}
-    public string Description { get;}
-    public AverageRating AverageRating { get; }
-
-    public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();
-
-    public HostId HostId { get;}
-    public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
-    public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
-
-    public DateTime CreatedDateTime { get;}
-    public DateTime UpdatedDateTime { get; private set; }
+    private Menu() { }
 
     private Menu(
         MenuId menuId,
         HostId hostId,
-        string name, 
+        string name,
         string description,
         AverageRating averageRating,
-        List<MenuSection> sections) : base(menuId)
+        List<MenuSection> sections)
+        : base(menuId)
     {
         HostId = hostId;
         Name = name;
@@ -41,6 +31,21 @@ public class Menu : AggregateRoot<MenuId>
         _sections = sections;
         AverageRating = averageRating;
     }
+
+    public string Name { get; private set; } = default!;
+    public string Description { get; private set; } = default!;
+    public AverageRating AverageRating { get; private set; } = default!;
+
+    public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();
+
+    public HostId HostId { get; private set; } = default!;
+    public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
+    public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
+
+    public DateTime CreatedDateTime { get; private set; } = default!;
+    public DateTime UpdatedDateTime { get; private set; } = default!;
+
+
 
     public static Menu Create(
         HostId hostId,

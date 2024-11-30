@@ -11,7 +11,11 @@ public sealed class MenuId : ValueObject
         Value = value;
     }
 
+    // TODO: Reforce invariants
     public static MenuId CreateUnique() => new(Guid.NewGuid());
+
+    // TODO: Reforce invariants
+    public static MenuId Create(Guid value) => new(value);
 
     public override IEnumerable<object> GetEqualityComponents()
     {

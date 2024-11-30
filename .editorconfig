@@ -398,3 +398,11 @@ dotnet_diagnostic.SA1601.severity = none
 # SA1313: Tuple names should be named the same as the type
 dotnet_diagnostic.SA1313.severity = none
 
+# SA1009: Member names should not be identical to their enclosing type
+dotnet_diagnostic.SA1009.severity = none
+
+# SA1502: Element should not be duplicated
+dotnet_diagnostic.SA1502.severity = none
+
+[*/Migrations/*]
+generated_code = true

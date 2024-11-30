@@ -5,15 +5,18 @@ namespace BuberDinner.Domain.Menus.Entities;
 
 public sealed class MenuItem : Entity<MenuItemId>
 {
-  
-    public string Name { get; }
-    public string Description { get; }
-
-    private MenuItem(MenuItemId menuItemId, string name, string description) : base(menuItemId)
+    private MenuItem(MenuItemId menuItemId, string name, string description) 
+        : base(menuItemId)
     {
         Name = name;
         Description = description;
     }
+
+    private MenuItem() { }
+    public string Name { get; private set; } = default!;
+    public string Description { get; private set; } = default!;
+
+
 
     public static MenuItem Create(string name, string description)
     {

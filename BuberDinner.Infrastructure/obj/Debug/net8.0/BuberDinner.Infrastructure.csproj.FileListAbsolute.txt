@@ -16,3 +16,5 @@ C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Infrastructure\bin\Debu
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDinner.Infrastructure.csproj.AssemblyReference.cache
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDin.DE1B2DD7.Up2Date
 C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDinner.Infrastructure.sourcelink.json
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Infrastructure\bin\Debug\net8.0\BuberDinner.Infrastructure.runtimeconfig.json
+C:\Projects\RIK\Rest_demo_ddd_yt\BuberDinner\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDinner.Infrastructure.genruntimeconfig.cache
