@@ -98,6 +98,25 @@ namespace BuberDinner.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MenuReviews",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Rating = table.Column<double>(type: "double precision", nullable: false),
+                    Comment = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
+                    HostId = table.Column<Guid>(type: "uuid", nullable: false),
+                    MenuId = table.Column<Guid>(type: "uuid", nullable: false),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DinnerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MenuReviews", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Menus",
                 columns: table => new
                 {
@@ -506,6 +525,9 @@ namespace BuberDinner.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "MenuReviewIds");
+
+            migrationBuilder.DropTable(
+                name: "MenuReviews");
 
             migrationBuilder.DropTable(
                 name: "Users");

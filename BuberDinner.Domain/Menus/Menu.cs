@@ -4,7 +4,7 @@ using BuberDinner.Domain.Dinners.ValueObjects;
 using BuberDinner.Domain.Hosts.ValueObjects;
 using BuberDinner.Domain.Menus.Entities;
 using BuberDinner.Domain.Menus.ValueObjects;
-using BuberDinner.Domain.MenusReviews.ValueObjects;
+using BuberDinner.Domain.MenuReviews.ValueObjects;
 
 namespace BuberDinner.Domain.Menus;
 

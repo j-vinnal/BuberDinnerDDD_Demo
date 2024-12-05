@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BuberDinner.Infrastructure.Migrations
 {
     [DbContext(typeof(BuberDinnerDbContext))]
-    [Migration("20241205231840_InitialCreate")]
+    [Migration("20241205233102_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -165,6 +165,42 @@ namespace BuberDinner.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Hosts", (string)null);
+                });
+
+            modelBuilder.Entity("BuberDinner.Domain.MenuReviews.MenuReview", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("DinnerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("GuestId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("HostId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("MenuId")
+                        .HasColumnType("uuid");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("double precision");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuReviews", (string)null);
                 });
 
             modelBuilder.Entity("BuberDinner.Domain.Menus.Menu", b =>
@@ -413,7 +449,7 @@ namespace BuberDinner.Infrastructure.Migrations
                                 .HasForeignKey("GuestId");
                         });
 
-                    b.OwnsMany("BuberDinner.Domain.MenusReviews.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>
+                    b.OwnsMany("BuberDinner.Domain.MenuReviews.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .ValueGeneratedOnAdd()
@@ -751,7 +787,7 @@ namespace BuberDinner.Infrastructure.Migrations
                                 .HasForeignKey("MenuId");
                         });
 
-                    b.OwnsMany("BuberDinner.Domain.MenusReviews.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>
+                    b.OwnsMany("BuberDinner.Domain.MenuReviews.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>
                         {
                             b1.Property<Guid>("Value")
                                 .HasColumnType("uuid")

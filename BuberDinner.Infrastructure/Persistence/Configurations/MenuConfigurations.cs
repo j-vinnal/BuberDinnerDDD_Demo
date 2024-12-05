@@ -3,7 +3,7 @@ using BuberDinner.Domain.Hosts.ValueObjects;
 using BuberDinner.Domain.Menus;
 using BuberDinner.Domain.Menus.Entities;
 using BuberDinner.Domain.Menus.ValueObjects;
-using BuberDinner.Domain.MenusReviews.ValueObjects;
+using BuberDinner.Domain.MenuReviews.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

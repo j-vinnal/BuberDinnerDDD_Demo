@@ -3,8 +3,8 @@ using BuberDinner.Domain.Common.ValueObjects;
 using BuberDinner.Domain.Dinners.ValueObjects;
 using BuberDinner.Domain.Guests.ValueObjects;
 using BuberDinner.Domain.Hosts.ValueObjects;
+using BuberDinner.Domain.MenuReviews.ValueObjects;
 using BuberDinner.Domain.Menus.ValueObjects;
-using BuberDinner.Domain.MenusReviews.ValueObjects;
 
 namespace BuberDinner.Domain.MenuReviews;
 
