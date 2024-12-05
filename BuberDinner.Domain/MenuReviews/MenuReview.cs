@@ -10,14 +10,16 @@ namespace BuberDinner.Domain.MenuReviews;
 
 public class MenuReview : AggregateRoot<MenuReviewId, Guid>
 {
-    public Rating Rating { get; }
-    public string Comment { get; }
-    public HostId HostId { get; }
-    public MenuId MenuId { get; }
-    public GuestId GuestId { get; }
-    public DinnerId DinnerId { get; }
-    public DateTime CreatedDateTime { get; }
+    public Rating Rating { get; private set; } = default!;
+    public string Comment { get; private set; } = default!;
+    public HostId HostId { get; private set; } = default!;
+    public MenuId MenuId { get; private set; } = default!;
+    public GuestId GuestId { get; private set; } = default!;
+    public DinnerId DinnerId { get; private set; } = default!;
+    public DateTime CreatedDateTime { get; private set; }
     public DateTime UpdatedDateTime { get; private set; }
+
+    private MenuReview() { }
 
     private MenuReview(
         MenuReviewId menuReviewId,
