@@ -1,4 +1,4 @@
-using BuberDinner.Domain.Dinnerss;
+using BuberDinner.Domain.Dinners;
 using BuberDinner.Domain.Hosts.ValueObjects;
 using BuberDinner.Domain.Menus;
 using BuberDinner.Domain.Menus.Entities;
@@ -101,7 +101,7 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
                     .HasMaxLength(100);
 
                 msib.Property(m => m.Description)
-                    .HasMaxLength(100); 
+                    .HasMaxLength(100);
             });
 
             msb.Navigation(s => s.Items).Metadata.SetField("_items");

@@ -2,6 +2,7 @@
 using BuberDinner.Application.Common.Interfaces.Authentication;
 using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Application.Common.Interfaces.Services;
+using BuberDinner.Infrastructure.Appsettings;
 using BuberDinner.Infrastructure.Authentication;
 using BuberDinner.Infrastructure.Persistence;
 using BuberDinner.Infrastructure.Persistence.Repositories;
@@ -29,11 +30,22 @@ public static class DependencyInjection
 
     private static IServiceCollection AddPersistence(this IServiceCollection services, ConfigurationManager configuration)
     {
-        services.AddDbContext<BuberDinnerDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
-
+        services.AddPostgresDb(configuration);
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMenuRepository, MenuRepository>();
+        return services;
+    }
+
+    private static IServiceCollection AddPostgresDb(this IServiceCollection services, ConfigurationManager configuration)
+    {
+        var settings = new NpgsqlSettings();
+        configuration.GetSection(NpgsqlSettings.SectionName).Bind(settings);
+
+        services.AddSingleton(Options.Create(settings));
+
+        services.AddDbContext<BuberDinnerDbContext>(options =>
+            options.UseNpgsql(settings.DefaultConnection));
+
         return services;
     }
 

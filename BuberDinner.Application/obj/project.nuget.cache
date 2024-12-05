@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1RQHYwvuIJU=",
+  "dgSpecHash": "wZWa1tloIAk=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Application\\BuberDinner.Application.csproj",
+  "projectFilePath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Application\\BuberDinner.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",

@@ -11,7 +11,9 @@ public sealed class GuestId : ValueObject
         Value = value;
     }
 
-    public static GuestId CreateUnique() => new(Guid.NewGuid());
+    public static GuestId Create(Guid value) => new (value);
+
+    public static GuestId CreateUnique() => new (Guid.NewGuid());
 
     public override IEnumerable<object> GetEqualityComponents()
     {

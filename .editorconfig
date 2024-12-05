@@ -404,5 +404,8 @@ dotnet_diagnostic.SA1009.severity = none
 # SA1502: Element should not be duplicated
 dotnet_diagnostic.SA1502.severity = none
 
+# SA1201: Constant fields should be declared static
+dotnet_diagnostic.SA1201.severity = none
+
 [*/Migrations/*]
 generated_code = true

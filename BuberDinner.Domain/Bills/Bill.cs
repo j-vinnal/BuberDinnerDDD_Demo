@@ -6,14 +6,16 @@ using BuberDinner.Domain.Hosts.ValueObjects;
 
 namespace BuberDinner.Domain.Bills
 {
-    public class Bill : AggregateRoot<BillId>
+    public class Bill : AggregateRoot<BillId, Guid>
     {
-        public DinnerId DinnerId { get; }
-        public GuestId GuestId { get; }
-        public HostId HostId { get; }
-        public Price Price { get; }
-        public DateTime CreatedDateTime { get; }
-        public DateTime UpdatedDateTime { get; private set; }
+        public DinnerId DinnerId { get; private set; } = default!;
+        public GuestId GuestId { get; private set; } = default!;
+        public HostId HostId { get; private set; } = default!;
+        public Price Price { get; private set; } = default!;
+        public DateTime CreatedDateTime { get; private set; } = default!;
+        public DateTime UpdatedDateTime { get; private set; } = default!;
+
+        private Bill() { }
 
         private Bill(
             BillId billId,
@@ -22,7 +24,8 @@ namespace BuberDinner.Domain.Bills
             HostId hostId,
             Price price,
             DateTime createdDateTime,
-            DateTime updatedDateTime) : base(billId)
+            DateTime updatedDateTime)
+            : base(billId)
         {
             DinnerId = dinnerId;
             GuestId = guestId;

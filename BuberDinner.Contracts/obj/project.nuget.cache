@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/rogOhTK76M=",
+  "dgSpecHash": "yru8gj4YRzU=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj",
+  "projectFilePath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
   ],

@@ -1,41 +1,39 @@
-
-
 using BuberDinner.Domain.Common.Models;
 using BuberDinner.Domain.Dinners.Enums;
 using BuberDinner.Domain.Dinners.ValueObjects;
 using BuberDinner.Domain.Hosts.ValueObjects;
 using BuberDinner.Domain.Menus.ValueObjects;
 
-namespace BuberDinner.Domain.Dinnerss;
+namespace BuberDinner.Domain.Dinners;
 
-
-public class Dinner : AggregateRoot<DinnerId>
+public class Dinner : AggregateRoot<DinnerId, Guid>
 {
+    private readonly List<Reservation> _reservations = new ();
 
-    private readonly List<Reservation> _reservations = new();
+    public string Name { get; private set; } = default!;
 
-    public string Name { get; }
+    public string Description { get; private set; } = default!;
+    public DateTime StartDateTime { get; private set; }
+    public DateTime EndDateTime { get; private set; }
 
-    public string Description { get; }
-    public DateTime StartDateTime { get; }
-    public DateTime EndDateTime { get; }
+    public DinnerStatus Status { get; private set; }
 
-    public DinnerStatus Status { get;}
+    public bool IsPublic { get; private set; }
+    public int MaxGuests { get; private set; }
+    public Price Price { get; private set; } = default!;
 
-    public bool IsPublic { get; }
-    public int MaxGuests { get; }
-    public Price Price { get; }
+    public HostId HostId { get; private set; } = default!;
+    public MenuId MenuId { get; private set; } = default!;
+    public string ImageUrl { get; private set; } = default!;
 
-    public HostId HostId { get; }
-    public MenuId MenuId { get; }
-    public string ImageUrl { get; }
-
-    public Location Location { get; }
+    public Location Location { get; private set; } = default!;
 
     public IReadOnlyList<Reservation> Reservations => _reservations.AsReadOnly();
 
-    public DateTime CreatedDateTime { get; }
-    public DateTime UpdatedDateTime { get; }
+    public DateTime CreatedDateTime { get; private set; }
+    public DateTime UpdatedDateTime { get; private set; }
+
+    private Dinner() { }
 
     private Dinner(
        DinnerId dinnerId,
@@ -52,7 +50,8 @@ public class Dinner : AggregateRoot<DinnerId>
        string imageUrl,
        Location location,
        DateTime createdDateTime,
-       DateTime updatedDateTime) : base(dinnerId)
+       DateTime updatedDateTime)
+       : base(dinnerId)
     {
         Name = name;
         Description = description;
@@ -100,5 +99,4 @@ public class Dinner : AggregateRoot<DinnerId>
             DateTime.UtcNow,
             DateTime.UtcNow);
     }
-
 }

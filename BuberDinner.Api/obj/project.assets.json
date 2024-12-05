@@ -4286,13 +4286,12 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Api\\BuberDinner.Api.csproj",
+      "projectUniqueName": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Api\\BuberDinner.Api.csproj",
       "projectName": "BuberDinner.Api",
-      "projectPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Api\\BuberDinner.Api.csproj",
+      "projectPath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Api\\BuberDinner.Api.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Api\\obj\\",
+      "outputPath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
@@ -4306,14 +4305,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Application\\BuberDinner.Application.csproj": {
-              "projectPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Application\\BuberDinner.Application.csproj"
+            "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Application\\BuberDinner.Application.csproj": {
+              "projectPath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Application\\BuberDinner.Application.csproj"
             },
-            "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj": {
-              "projectPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj"
+            "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj": {
+              "projectPath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj"
             },
-            "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Infrastructure\\BuberDinner.Infrastructure.csproj": {
-              "projectPath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Infrastructure\\BuberDinner.Infrastructure.csproj"
+            "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Infrastructure\\BuberDinner.Infrastructure.csproj": {
+              "projectPath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Infrastructure\\BuberDinner.Infrastructure.csproj"
             }
           }
         }
@@ -4326,8 +4325,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -4381,7 +4381,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

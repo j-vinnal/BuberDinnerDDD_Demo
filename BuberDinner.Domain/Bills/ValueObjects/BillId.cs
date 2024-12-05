@@ -2,16 +2,18 @@ using BuberDinner.Domain.Common.Models;
 
 namespace BuberDinner.Domain.Bills.ValueObjects
 {
-    public sealed class BillId : ValueObject
+    public sealed class BillId : AggregateRootId<Guid>
     {
-        public Guid Value { get; }
+        public override Guid Value { get; }
 
         private BillId(Guid value)
         {
             Value = value;
         }
 
-        public static BillId CreateUnique() => new(Guid.NewGuid());
+        public static BillId Create(Guid value) => new (value);
+
+        public static BillId CreateUnique() => new (Guid.NewGuid());
 
         public override IEnumerable<object> GetEqualityComponents()
         {

@@ -2,9 +2,9 @@ using BuberDinner.Domain.Common.Models;
 
 namespace BuberDinner.Domain.Hosts.ValueObjects;
 
-public sealed class HostId : ValueObject
+public sealed class HostId : AggregateRootId<Guid>
 {
-    public Guid Value { get; }
+    public override Guid Value { get; }
 
     private HostId(Guid value)
     {
@@ -21,7 +21,7 @@ public sealed class HostId : ValueObject
         return new HostId(hostId);
     }
 
-    public static HostId CreateUnique() => new(Guid.NewGuid());
+    public static HostId CreateUnique() => new (Guid.NewGuid());
 
     public override IEnumerable<object> GetEqualityComponents()
     {

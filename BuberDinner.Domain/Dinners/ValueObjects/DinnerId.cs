@@ -2,16 +2,18 @@ using BuberDinner.Domain.Common.Models;
 
 namespace BuberDinner.Domain.Dinners.ValueObjects;
 
-public sealed class DinnerId : ValueObject
+public sealed class DinnerId : AggregateRootId<Guid>
 {
-    public Guid Value { get; }
+    public override Guid Value { get; }
 
     private DinnerId(Guid value)
     {
         Value = value;
     }
 
-    public static DinnerId CreateUnique() => new(Guid.NewGuid());
+    public static DinnerId Create(Guid value) => new (value);
+
+    public static DinnerId CreateUnique() => new (Guid.NewGuid());
 
     public override IEnumerable<object> GetEqualityComponents()
     {

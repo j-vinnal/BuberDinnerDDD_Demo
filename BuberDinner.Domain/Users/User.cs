@@ -3,14 +3,16 @@ using BuberDinner.Domain.Users.ValueObjects;
 
 namespace BuberDinner.Domain.Users;
 
-public class User : AggregateRoot<UserId>
+public class User : AggregateRoot<UserId, Guid>
 {
-    public string FirstName { get; }
-    public string LastName { get; }
-    public string Email { get; }
-    public string Password { get; }
-    public DateTime CreatedDateTime { get; }
-    public DateTime UpdatedDateTime { get; private set; }
+    public string FirstName { get; private set; } = default!;
+    public string LastName { get; private set; } = default!;
+    public string Email { get; private set; } = default!;
+    public string Password { get; private set; } = default!;
+    public DateTime CreatedDateTime { get; private set; } = default!;
+    public DateTime UpdatedDateTime { get; private set; } = default!;
+
+    private User() { }
 
     private User(
         UserId userId,
@@ -19,7 +21,8 @@ public class User : AggregateRoot<UserId>
         string email,
         string password,
         DateTime createdDateTime,
-        DateTime updatedDateTime) : base(userId)
+        DateTime updatedDateTime)
+        : base(userId)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -35,7 +38,6 @@ public class User : AggregateRoot<UserId>
         string email,
         string password)
     {
-
         return new User(
             UserId.CreateUnique(),
             firstName,

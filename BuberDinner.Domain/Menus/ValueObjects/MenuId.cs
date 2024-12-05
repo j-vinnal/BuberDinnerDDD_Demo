@@ -2,9 +2,9 @@ using BuberDinner.Domain.Common.Models;
 
 namespace BuberDinner.Domain.Menus.ValueObjects;
 
-public sealed class MenuId : ValueObject
+public sealed class MenuId : AggregateRootId<Guid>
 {
-    public Guid Value { get; }
+    public override Guid Value { get; }
 
     private MenuId(Guid value)
     {
@@ -12,10 +12,10 @@ public sealed class MenuId : ValueObject
     }
 
     // TODO: Reforce invariants
-    public static MenuId CreateUnique() => new(Guid.NewGuid());
+    public static MenuId CreateUnique() => new (Guid.NewGuid());
 
     // TODO: Reforce invariants
-    public static MenuId Create(Guid value) => new(value);
+    public static MenuId Create(Guid value) => new (value);
 
     public override IEnumerable<object> GetEqualityComponents()
     {

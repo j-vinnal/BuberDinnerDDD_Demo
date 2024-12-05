@@ -5,7 +5,7 @@ namespace BuberDinner.Domain.Menus.Entities;
 
 public sealed class MenuSection : Entity<MenuSectionId>
 {
-    private readonly List<MenuItem> _items = new();
+    private readonly List<MenuItem> _items = new ();
 
     private MenuSection() { }
 
@@ -35,6 +35,6 @@ public sealed class MenuSection : Entity<MenuSectionId>
             MenuSectionId.CreateUnique(),
             name,
             description,
-            items ?? new());
+            items ?? new List<MenuItem>());
     }
 }

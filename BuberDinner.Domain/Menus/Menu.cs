@@ -8,11 +8,24 @@ using BuberDinner.Domain.MenusReviews.ValueObjects;
 
 namespace BuberDinner.Domain.Menus;
 
-public class Menu : AggregateRoot<MenuId>
+public class Menu : AggregateRoot<MenuId, Guid>
 {
-    private readonly List<MenuSection> _sections = new();
-    private readonly List<DinnerId> _dinnerIds = new();
-    private readonly List<MenuReviewId> _menuReviewIds = new();
+    private readonly List<MenuSection> _sections = new ();
+    private readonly List<DinnerId> _dinnerIds = new ();
+    private readonly List<MenuReviewId> _menuReviewIds = new ();
+
+    public string Name { get; private set; } = default!;
+    public string Description { get; private set; } = default!;
+    public AverageRating AverageRating { get; private set; } = default!;
+
+    public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();
+
+    public HostId HostId { get; private set; } = default!;
+    public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
+    public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
+
+    public DateTime CreatedDateTime { get; private set; } = default!;
+    public DateTime UpdatedDateTime { get; private set; } = default!;
 
     private Menu() { }
 
@@ -32,21 +45,6 @@ public class Menu : AggregateRoot<MenuId>
         AverageRating = averageRating;
     }
 
-    public string Name { get; private set; } = default!;
-    public string Description { get; private set; } = default!;
-    public AverageRating AverageRating { get; private set; } = default!;
-
-    public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();
-
-    public HostId HostId { get; private set; } = default!;
-    public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
-    public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
-
-    public DateTime CreatedDateTime { get; private set; } = default!;
-    public DateTime UpdatedDateTime { get; private set; } = default!;
-
-
-
     public static Menu Create(
         HostId hostId,
         string name,
@@ -59,7 +57,7 @@ public class Menu : AggregateRoot<MenuId>
             name,
             description,
             AverageRating.CreateNew(),
-            sections ?? new());
+            sections ?? new ());
     }
 
     public void AddRating(Rating rating)
@@ -73,6 +71,7 @@ public class Menu : AggregateRoot<MenuId>
         AverageRating.RemoveRating(rating);
         UpdatedDateTime = DateTime.UtcNow;
     }
+
     public void AddDinner(DinnerId dinnerId)
     {
         _dinnerIds.Add(dinnerId);
@@ -81,10 +80,5 @@ public class Menu : AggregateRoot<MenuId>
     public void RemoveDinner(DinnerId dinnerId)
     {
         _dinnerIds.Remove(dinnerId);
-    }
-
-    public void UpdateSection(MenuSection section)
-    {
-
     }
 }

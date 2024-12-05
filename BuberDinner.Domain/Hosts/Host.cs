@@ -1,28 +1,30 @@
 using BuberDinner.Domain.Common.Models;
-using BuberDinner.Domain.Users.ValueObjects;
-using BuberDinner.Domain.Menus.ValueObjects;
+using BuberDinner.Domain.Common.ValueObjects;
 using BuberDinner.Domain.Dinners.ValueObjects;
 using BuberDinner.Domain.Hosts.ValueObjects;
-using BuberDinner.Domain.Common.ValueObjects;
+using BuberDinner.Domain.Menus.ValueObjects;
+using BuberDinner.Domain.Users.ValueObjects;
 
-namespace BuberDinner.Domain.Hostss;
+namespace BuberDinner.Domain.Hosts;
 
-public class Host : AggregateRoot<HostId>
+public class Host : AggregateRoot<HostId, Guid>
 {
-    private readonly List<MenuId> _menuIds = new();
-    private readonly List<DinnerId> _dinnerIds = new();
+    private readonly List<MenuId> _menuIds = new ();
+    private readonly List<DinnerId> _dinnerIds = new ();
 
-    public string FirstName { get; }
-    public string LastName { get; }
-    public string ProfileImage { get; }
-    public AverageRating AverageRating { get;}
-    public UserId UserId { get; }
+    public string FirstName { get; private set; } = default!;
+    public string LastName { get; private set; } = default!;
+    public string ProfileImage { get; private set; } = default!;
+    public AverageRating AverageRating { get; private set; } = default!;
+    public UserId UserId { get; private set; } = default!;
 
     public IReadOnlyList<MenuId> MenuIds => _menuIds.AsReadOnly();
     public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
 
-    public DateTime CreatedDateTime { get; }
+    public DateTime CreatedDateTime { get; private set; }
     public DateTime UpdatedDateTime { get; private set; }
+
+    private Host() { }
 
     private Host(
         HostId hostId,
@@ -31,7 +33,8 @@ public class Host : AggregateRoot<HostId>
         string profileImage,
         UserId userId,
         DateTime createdDateTime,
-        DateTime updatedDateTime) : base(hostId)
+        DateTime updatedDateTime)
+        : base(hostId)
     {
         FirstName = firstName;
         LastName = lastName;

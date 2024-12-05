@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GXcWdlPyPuE=",
+  "dgSpecHash": "AaGA7AcByWQ=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\RIK\\Rest_demo_ddd_yt\\BuberDinner\\BuberDinner.Domain\\BuberDinner.Domain.csproj",
+  "projectFilePath": "C:\\Projects\\Uni\\TA\\BuberDinnerDDD_Demo-main\\BuberDinner.Domain\\BuberDinner.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
