@@ -13,6 +13,8 @@ namespace BuberDinner.Domain.Bills.ValueObjects
 
         public static BillId Create(Guid value) => new (value);
 
+        public static BillId Create(string billId) => new (Guid.Parse(billId));
+
         public static BillId CreateUnique() => new (Guid.NewGuid());
 
         public override IEnumerable<object> GetEqualityComponents()

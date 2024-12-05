@@ -13,6 +13,8 @@ public sealed class DinnerId : AggregateRootId<Guid>
 
     public static DinnerId Create(Guid value) => new (value);
 
+    public static DinnerId Create(string dinnerId) => new (Guid.Parse(dinnerId));
+
     public static DinnerId CreateUnique() => new (Guid.NewGuid());
 
     public override IEnumerable<object> GetEqualityComponents()

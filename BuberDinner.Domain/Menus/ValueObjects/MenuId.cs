@@ -17,6 +17,8 @@ public sealed class MenuId : AggregateRootId<Guid>
     // TODO: Reforce invariants
     public static MenuId Create(Guid value) => new (value);
 
+    public static MenuId Create(string menuId) => new (Guid.Parse(menuId));
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

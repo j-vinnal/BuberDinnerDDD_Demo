@@ -13,6 +13,8 @@ namespace BuberDinner.Domain.Users.ValueObjects
 
         public static UserId Create(Guid value) => new (value);
 
+        public static UserId Create(string userId) => new (Guid.Parse(userId));
+
         public static UserId CreateUnique() => new (Guid.NewGuid());
 
         public override IEnumerable<object> GetEqualityComponents()
