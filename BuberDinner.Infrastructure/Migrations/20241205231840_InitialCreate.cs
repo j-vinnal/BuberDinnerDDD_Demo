@@ -60,6 +60,25 @@ namespace BuberDinner.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Guests",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FirstName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    ProfileImage = table.Column<string>(type: "text", nullable: false),
+                    AverageRating_Value = table.Column<double>(type: "double precision", nullable: false),
+                    AverageRating_NumRatings = table.Column<int>(type: "integer", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Guests", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Hosts",
                 columns: table => new
                 {
@@ -134,6 +153,129 @@ namespace BuberDinner.Infrastructure.Migrations
                         name: "FK_DinnerReservations_Dinners_DinnerId",
                         column: x => x.DinnerId,
                         principalTable: "Dinners",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GuestBills",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    BillId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuestBills", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GuestBills_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GuestMenuReviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    MenuReviewId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuestMenuReviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GuestMenuReviews_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GuestPastDinners",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DinnerId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuestPastDinners", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GuestPastDinners_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GuestPendingDinners",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DinnerId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuestPendingDinners", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GuestPendingDinners_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GuestRatings",
+                columns: table => new
+                {
+                    RatingId = table.Column<Guid>(type: "uuid", nullable: false),
+                    HostId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DinnerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Rating = table.Column<double>(type: "double precision", nullable: false),
+                    CreatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuestRatings", x => x.RatingId);
+                    table.ForeignKey(
+                        name: "FK_GuestRatings_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GuestUpcomingDinners",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    GuestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DinnerId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuestUpcomingDinners", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GuestUpcomingDinners_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -263,6 +405,36 @@ namespace BuberDinner.Infrastructure.Migrations
                 column: "DinnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_GuestBills_GuestId",
+                table: "GuestBills",
+                column: "GuestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GuestMenuReviews_GuestId",
+                table: "GuestMenuReviews",
+                column: "GuestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GuestPastDinners_GuestId",
+                table: "GuestPastDinners",
+                column: "GuestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GuestPendingDinners_GuestId",
+                table: "GuestPendingDinners",
+                column: "GuestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GuestRatings_GuestId",
+                table: "GuestRatings",
+                column: "GuestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GuestUpcomingDinners_GuestId",
+                table: "GuestUpcomingDinners",
+                column: "GuestId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_HostDinnerIds_HostId",
                 table: "HostDinnerIds",
                 column: "HostId");
@@ -303,6 +475,24 @@ namespace BuberDinner.Infrastructure.Migrations
                 name: "DinnerReservations");
 
             migrationBuilder.DropTable(
+                name: "GuestBills");
+
+            migrationBuilder.DropTable(
+                name: "GuestMenuReviews");
+
+            migrationBuilder.DropTable(
+                name: "GuestPastDinners");
+
+            migrationBuilder.DropTable(
+                name: "GuestPendingDinners");
+
+            migrationBuilder.DropTable(
+                name: "GuestRatings");
+
+            migrationBuilder.DropTable(
+                name: "GuestUpcomingDinners");
+
+            migrationBuilder.DropTable(
                 name: "HostDinnerIds");
 
             migrationBuilder.DropTable(
@@ -322,6 +512,9 @@ namespace BuberDinner.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Dinners");
+
+            migrationBuilder.DropTable(
+                name: "Guests");
 
             migrationBuilder.DropTable(
                 name: "Hosts");

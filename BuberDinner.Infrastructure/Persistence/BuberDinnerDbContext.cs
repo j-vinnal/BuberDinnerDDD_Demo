@@ -22,7 +22,7 @@ public class BuberDinnerDbContext : DbContext
     public DbSet<Dinner> Dinners { get; set; } = default!;
     public DbSet<Bill> Bills { get; set; } = default!;
 
-    // public DbSet<Guest> Guests { get; set; } = default!;
+    public DbSet<Guest> Guests { get; set; } = default!;
     public DbSet<User> Users { get; set; } = default!;
 
     // public DbSet<MenuReview> MenuReviews { get; set; } = default!;

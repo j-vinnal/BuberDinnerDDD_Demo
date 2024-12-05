@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuberDinner.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54fa0f10b3b81f2a1fb2813d471f5ad1826c9cbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c4ab3b984de1b4bb1f80a01e9e4b372b12f01fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuberDinner.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuberDinner.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

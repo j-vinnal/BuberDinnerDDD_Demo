@@ -98,6 +98,39 @@ namespace BuberDinner.Infrastructure.Migrations
                     b.ToTable("Dinners");
                 });
 
+            modelBuilder.Entity("BuberDinner.Domain.Guests.Guest", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("ProfileImage")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Guests", (string)null);
+                });
+
             modelBuilder.Entity("BuberDinner.Domain.Hosts.Host", b =>
                 {
                     b.Property<Guid>("Id")
@@ -329,6 +362,202 @@ namespace BuberDinner.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Reservations");
+                });
+
+            modelBuilder.Entity("BuberDinner.Domain.Guests.Guest", b =>
+                {
+                    b.OwnsMany("BuberDinner.Domain.Bills.ValueObjects.BillId", "BillIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uuid")
+                                .HasColumnName("BillId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestBills", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsOne("BuberDinner.Domain.Common.ValueObjects.AverageRating", "AverageRating", b1 =>
+                        {
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<int>("NumRatings")
+                                .HasColumnType("integer");
+
+                            b1.Property<double>("Value")
+                                .HasColumnType("double precision");
+
+                            b1.HasKey("GuestId");
+
+                            b1.ToTable("Guests");
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("BuberDinner.Domain.MenusReviews.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uuid")
+                                .HasColumnName("MenuReviewId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestMenuReviews", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("BuberDinner.Domain.Dinners.ValueObjects.DinnerId", "PastDinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uuid")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestPastDinners", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("BuberDinner.Domain.Dinners.ValueObjects.DinnerId", "PendingDinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uuid")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestPendingDinners", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("BuberDinner.Domain.Dinners.ValueObjects.DinnerId", "UpcomingDinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uuid")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestUpcomingDinners", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("BuberDinner.Domain.Guestss.Entities.GuestRating", "Ratings", b1 =>
+                        {
+                            b1.Property<Guid>("Id")
+                                .HasColumnType("uuid")
+                                .HasColumnName("RatingId");
+
+                            b1.Property<DateTime>("CreatedDateTime")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.Property<Guid>("DinnerId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("HostId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<double>("Rating")
+                                .HasColumnType("double precision");
+
+                            b1.Property<DateTime>("UpdatedDateTime")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestRatings", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.Navigation("AverageRating")
+                        .IsRequired();
+
+                    b.Navigation("BillIds");
+
+                    b.Navigation("MenuReviewIds");
+
+                    b.Navigation("PastDinnerIds");
+
+                    b.Navigation("PendingDinnerIds");
+
+                    b.Navigation("Ratings");
+
+                    b.Navigation("UpcomingDinnerIds");
                 });
 
             modelBuilder.Entity("BuberDinner.Domain.Hosts.Host", b =>

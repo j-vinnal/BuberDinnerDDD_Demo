@@ -1,18 +1,20 @@
 using BuberDinner.Domain.Common.Models;
-using BuberDinner.Domain.Guests.ValueObjects;
-using BuberDinner.Domain.Dinners.ValueObjects;
-using BuberDinner.Domain.Hosts.ValueObjects;
 using BuberDinner.Domain.Common.ValueObjects;
+using BuberDinner.Domain.Dinners.ValueObjects;
+using BuberDinner.Domain.Guests.ValueObjects;
+using BuberDinner.Domain.Hosts.ValueObjects;
 
 namespace BuberDinner.Domain.Guestss.Entities;
 
-public class GuestRating : Entity<GuestRatingId>
+public class GuestRating : AggregateRoot<GuestRatingId, Guid>
 {
-    public HostId HostId { get; }
-    public DinnerId DinnerId { get; }
-    public Rating Rating { get; }
-    public DateTime CreatedDateTime { get; }
+    public HostId HostId { get; private set; } = default!;
+    public DinnerId DinnerId { get; private set; } = default!;
+    public Rating Rating { get; private set; } = default!;
+    public DateTime CreatedDateTime { get; private set; }
     public DateTime UpdatedDateTime { get; private set; }
+
+    private GuestRating() { }
 
     private GuestRating(
         GuestRatingId guestRatingId,
@@ -20,7 +22,8 @@ public class GuestRating : Entity<GuestRatingId>
         DinnerId dinnerId,
         Rating rating,
         DateTime createdDateTime,
-        DateTime updatedDateTime) : base(guestRatingId)
+        DateTime updatedDateTime)
+        : base(guestRatingId)
     {
         HostId = hostId;
         DinnerId = dinnerId;
