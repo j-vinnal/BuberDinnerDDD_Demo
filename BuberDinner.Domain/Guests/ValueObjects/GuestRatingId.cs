@@ -12,7 +12,7 @@ public sealed class GuestRatingId : ValueObject
         Value = value;
     }
 
-    public static GuestRatingId CreateUnique() => new(Guid.NewGuid());
+    public static GuestRatingId CreateUnique() => new (Guid.NewGuid());
 
     public override IEnumerable<object> GetEqualityComponents()
     {

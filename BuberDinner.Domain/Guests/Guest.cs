@@ -9,20 +9,20 @@ using BuberDinner.Domain.Users.ValueObjects;
 
 namespace BuberDinner.Domain.Guests;
 
-public class Guest : AggregateRoot<GuestId>
+public class Guest : AggregateRoot<GuestId, Guid>
 {
-    private readonly List<DinnerId> _upcomingDinnerIds = new();
-    private readonly List<DinnerId> _pastDinnerIds = new();
-    private readonly List<DinnerId> _pendingDinnerIds = new();
-    private readonly List<BillId> _billIds = new();
-    private readonly List<MenuReviewId> _menuReviewIds = new();
-    private readonly List<GuestRating> _ratings = new();
+    private readonly List<DinnerId> _upcomingDinnerIds = new ();
+    private readonly List<DinnerId> _pastDinnerIds = new ();
+    private readonly List<DinnerId> _pendingDinnerIds = new ();
+    private readonly List<BillId> _billIds = new ();
+    private readonly List<MenuReviewId> _menuReviewIds = new ();
+    private readonly List<GuestRating> _ratings = new ();
 
-    public string FirstName { get; }
-    public string LastName { get; }
-    public string ProfileImage { get; }
-    public AverageRating AverageRating { get;}
-    public UserId UserId { get; }
+    public string FirstName { get; private set; } = default!;
+    public string LastName { get; private set; } = default!;
+    public string ProfileImage { get; private set; } = default!;
+    public AverageRating AverageRating { get; private set; } = default!;
+    public UserId UserId { get; private set; } = default!;
 
     public IReadOnlyList<DinnerId> UpcomingDinnerIds => _upcomingDinnerIds.AsReadOnly();
     public IReadOnlyList<DinnerId> PastDinnerIds => _pastDinnerIds.AsReadOnly();
@@ -31,8 +31,10 @@ public class Guest : AggregateRoot<GuestId>
     public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
     public IReadOnlyList<GuestRating> Ratings => _ratings.AsReadOnly();
 
-    public DateTime CreatedDateTime { get; }
+    public DateTime CreatedDateTime { get; private set; }
     public DateTime UpdatedDateTime { get; private set; }
+
+    private Guest() { }
 
     private Guest(
         GuestId guestId,
@@ -41,7 +43,8 @@ public class Guest : AggregateRoot<GuestId>
         string profileImage,
         UserId userId,
         DateTime createdDateTime,
-        DateTime updatedDateTime) : base(guestId)
+        DateTime updatedDateTime)
+        : base(guestId)
     {
         FirstName = firstName;
         LastName = lastName;

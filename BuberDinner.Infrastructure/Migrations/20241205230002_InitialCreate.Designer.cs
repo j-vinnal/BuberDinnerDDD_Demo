@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BuberDinner.Infrastructure.Migrations
 {
     [DbContext(typeof(BuberDinnerDbContext))]
-    [Migration("20241205225625_InitialCreate")]
+    [Migration("20241205230002_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
