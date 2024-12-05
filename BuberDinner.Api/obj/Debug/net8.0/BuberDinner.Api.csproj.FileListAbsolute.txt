@@ -488,3 +488,4 @@ C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Api\obj\Debug\net8.0\ref
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Api\obj\Debug\net8.0\BuberDinner.Api.pdb
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Api\obj\Debug\net8.0\BuberDinner.Api.genruntimeconfig.cache
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Api\obj\Debug\net8.0\ref\BuberDinner.Api.dll
+C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Api\obj\Debug\net8.0\BuberDinner.Api.sourcelink.json

@@ -56,3 +56,4 @@ C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Infrastructure\obj\Debug
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDinner.Infrastructure.pdb
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDinner.Infrastructure.genruntimeconfig.cache
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Infrastructure\obj\Debug\net8.0\ref\BuberDinner.Infrastructure.dll
+C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Infrastructure\obj\Debug\net8.0\BuberDinner.Infrastructure.sourcelink.json

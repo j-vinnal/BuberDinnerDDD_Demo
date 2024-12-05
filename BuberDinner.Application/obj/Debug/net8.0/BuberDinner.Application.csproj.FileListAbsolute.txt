@@ -44,3 +44,4 @@ C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Application\obj\Debug\ne
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Application\obj\Debug\net8.0\refint\BuberDinner.Application.dll
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Application\obj\Debug\net8.0\BuberDinner.Application.pdb
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Application\obj\Debug\net8.0\ref\BuberDinner.Application.dll
+C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Application\obj\Debug\net8.0\BuberDinner.Application.sourcelink.json

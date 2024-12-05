@@ -32,3 +32,4 @@ C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Contracts\obj\Debug\net8
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Contracts\obj\Debug\net8.0\refint\BuberDinner.Contracts.dll
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Contracts\obj\Debug\net8.0\BuberDinner.Contracts.pdb
 C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Contracts\obj\Debug\net8.0\ref\BuberDinner.Contracts.dll
+C:\Projects\Uni\TA\BuberDinnerDDD_Demo-main\BuberDinner.Contracts\obj\Debug\net8.0\BuberDinner.Contracts.sourcelink.json
